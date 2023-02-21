@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
       }
 
       if res.code == '200'
-        @text = res.body[17..47].tr('!', '')
+        @text = res.body[17..-1].tr('!', '')
       else
         @text = "no backend found"
       end
@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
       }
 
       if crystalres.code == '200'
-        @crystal = crystalres.body[17..47].tr('!', '')
+        @crystal = crystalres.body[17..-1].tr('!', '')
       else
         @crystal = "no backend found"
       end
